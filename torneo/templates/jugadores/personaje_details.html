@@ -1,0 +1,10 @@
+{% extends 'jugadores/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <a class="btn btn-default" href="{% url 'personaje_edit' pk=post.pk %}">Acutalizar</a>
+        <a class="btn btn-default" href="{% url 'personaje_delete' pk=post.pk %}">Delete</a>
+        <h1>{{ post.nombre }}</h1>
+        <p>{{ post.anio|linebreaksbr }}</p>
+    </div>
+{% endblock %}
