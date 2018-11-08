@@ -4,7 +4,7 @@
     {% for post in posts %}
         <div class="post">
             <h1><a href="{% url 'personaje_details' pk=post.pk %}">{{ post.nombre }}</a></h1>
-            <p>{{ post.anio|linebreaksbr }}</p>
+            <p>{{ post.anio|linebreaksbr }} {{ post.compania|linebreaksbr }} </p>
         </div>
     {% endfor %}
 {% endblock %}

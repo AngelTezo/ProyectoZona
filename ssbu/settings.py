@@ -25,7 +25,7 @@ SECRET_KEY = 'bh6ms=y!_!s*0*$0$2xibm-wvrnu#w4xa%%1(f7e_cou_!rw7k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['angeltezo.pythonanywhere.com',]
 
 
 # Application definition

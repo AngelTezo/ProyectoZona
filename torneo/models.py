@@ -3,9 +3,10 @@ from django.contrib import admin
 from PIL import Image
 
 class Personaje(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30,default='')
+    compania = models.CharField(max_length=30,default='')
     anio = models.IntegerField()
-    imagen = models.ImageField(default='default.png')
+    imagen = models.ImageField(default='')
 
     def __str__(self):
         return self.nombre
@@ -14,6 +15,7 @@ class Personaje(models.Model):
 class Jugador(models.Model):
     nombre = models.CharField(max_length=60)
     anio = models.IntegerField()
+    consola = models.CharField(max_length=60,default='')
     personajes = models.ManyToManyField(Personaje, through='Mains')
 
     def __str__(self):

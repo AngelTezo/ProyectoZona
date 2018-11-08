@@ -5,12 +5,18 @@
         <a class="btn btn-default" href="{% url 'jugador_edit' pk=jugador.pk %}">Acutalizar</a>
         <a class="btn btn-default" href="{% url 'jugador_delete' pk=jugador.pk %}">Eliminar</a>
         <h1>{{ jugador.nombre }}</h1>
-        <p>{{ jugador.anio|linebreaksbr }}</p>
+        <p>Anio: {{ jugador.anio|linebreaksbr }}</p>
+        <p>Consola: {{ jugador.consola|linebreaksbr }}</p>
     </div>
+    <h1>Personajes con los que juega</h1>
+    <div class="post">
+    <ul>
     {% for main in mains %}
-        <div class="post">
-            <h3><a href="#">{{ main.personaje }}</a></h3>
-        </div>
+    <li>
+        <p><a href="{% url 'personaje_details' pk=main.pk %}">{{ main.personaje }}</a></p>
+    </li>
     {% endfor %}
+    </ul>
+    </div>
 
 {% endblock %}

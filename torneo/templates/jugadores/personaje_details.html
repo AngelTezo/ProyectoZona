@@ -5,6 +5,16 @@
         <a class="btn btn-default" href="{% url 'personaje_edit' pk=post.pk %}">Acutalizar</a>
         <a class="btn btn-default" href="{% url 'personaje_delete' pk=post.pk %}">Delete</a>
         <h1>{{ post.nombre }}</h1>
-        <p>{{ post.anio|linebreaksbr }}</p>
+        <p>{{ post.anio|linebreaksbr }} {{ post.compania|linebreaksbr }}</p>
+        <h1>Jugadores que lo utilizan</h1>
+        <div class="post">
+        <ul>
+        {% for main in mains %}
+        <li>
+            <p><a href="{% url 'jugador_details' pk=main.pk %}">{{ main.jugador }}</a></p>
+        </li>
+        {% endfor %}
+        </ul>
+        </div>
     </div>
 {% endblock %}

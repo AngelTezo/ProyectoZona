@@ -4,12 +4,12 @@ from .models import Jugador, Personaje
 class JugadorForm(forms.ModelForm):
     class Meta:
         model = Jugador
-        fields = ('nombre', 'anio', 'personajes')
+        fields = ('nombre', 'anio','consola', 'personajes')
 
 class PForm(forms.ModelForm):
     class Meta:
         model = Personaje
-        fields = ('nombre', 'anio','imagen')
+        fields = ('nombre', 'anio','compania','imagen')
 
 def __init__(self, *args, **kwargs):
     super(JugadorForm, self).__init__(*args, **kwargs)

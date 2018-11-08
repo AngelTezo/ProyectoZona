@@ -87,7 +87,8 @@ def personaje_edit(request, pk):
 @login_required
 def personaje_details(request, pk):
     post = get_object_or_404(Personaje, pk=pk)
-    return render(request, 'jugadores/personaje_details.html', {'post': post})
+    mains = Mains.objects.filter(personaje=pk)
+    return render(request, 'jugadores/personaje_details.html', {'post': post,'mains': mains})
 
 @login_required
 def personaje_delete(request, pk):
